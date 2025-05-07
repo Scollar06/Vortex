@@ -16,26 +16,24 @@
       color: #388e3c;
       margin-top: 10px;
     }
+
     @media (max-width: 768px) {
       nav {
         flex-direction: column;
         display: none;
         margin-top: 10px;
       }
+
       nav.active {
         display: flex;
       }
+
       .menu-toggle {
         display: block;
       }
     }
   </style>
   <script defer>
-    function updateThemeIcon() {
-      const btn = document.getElementById('theme-toggle');
-      btn.textContent = document.body.classList.contains('dark-theme') ? '☀️' : '🌙';
-    }
-
     document.addEventListener('DOMContentLoaded', () => {
       const observer = new IntersectionObserver(entries => {
         entries.forEach(entry => {
@@ -54,16 +52,11 @@
       menuToggle.addEventListener('click', () => {
         nav.classList.toggle('active');
       });
-
-      const themeBtn = document.getElementById('theme-toggle');
-      themeBtn.addEventListener('click', () => {
-        document.body.classList.toggle('dark-theme');
-        updateThemeIcon();
-      });
     });
   </script>
 </head>
-<body>
+
+<body class="dark-theme">
   <header>
     <a href="#"><img src="img/VORTEX-CARBON-logo-final2.png" alt="Vortex Carbon Logo" class="logo" /></a>
     <button id="menu-toggle" class="menu-toggle">☰</button>
@@ -122,11 +115,9 @@
         referrerpolicy="no-referrer-when-downgrade">
       </iframe>
     </div>
-    
   </section>
 
   <a href="https://wa.me/559293808532" class="whatsapp" target="_blank">📱</a>
-  <button id="theme-toggle" class="theme-toggle" aria-label="Tema">🌙</button>
 
   <footer>
     <p>&copy; 2025 Vortex Carbon. Todos os direitos reservados.</p>
